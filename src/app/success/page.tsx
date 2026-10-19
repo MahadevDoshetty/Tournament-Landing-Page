@@ -13,8 +13,9 @@ export default async function SuccessPage({
         <p className="text-xs uppercase tracking-[0.28em] text-orange-300">Entry confirmed</p>
         <h1 className="mt-3 font-display text-3xl uppercase text-white">VykraX Studios — You are in</h1>
         <p className="mt-4 text-lg text-zinc-300">
-          Your Championship entry is confirmed. Keep this Team ID safe; it identifies your place in
+          Your Championship entry is confirmed. Keep this Team ID safe, it identifies your place in
           the competition.
+          Check your spam box for the mail.
         </p>
         <p className="mt-8 rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-4 py-5 font-display text-2xl tracking-[0.18em] text-cyan-200">
           {teamId || "TEAM ID PENDING"}

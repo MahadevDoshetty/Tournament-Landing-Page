@@ -24,10 +24,13 @@ non-refundable, subject to applicable law and payment-provider or bank processes
 To export verified registrations to Google Sheets, enable the Google Sheets API in your Google
 Cloud project, create a service account, and share the spreadsheet with its email as an Editor.
 Set the spreadsheet ID (the value between `/d/` and `/edit` in the spreadsheet URL), the service
-account email, and its private key in `.env.local` or your deployment environment. For
-`GOOGLE_PRIVATE_KEY`, store the complete PEM private key; when entering it as a single-line
-environment value, replace each newline with `\n`. The spreadsheet must contain a tab named
-`Registrations`. Never commit or share the private key.
+account email, and its private key in `.env.local` or your deployment environment. In Vercel,
+create `GOOGLE_PRIVATE_KEY` with the complete `private_key` value from the downloaded service
+account JSON, including the `BEGIN` and `END` PEM lines. Paste the key itself, not placeholder
+text. Literal `\n` line breaks, actual line breaks, surrounding quotes, or the complete service
+account JSON object are accepted. Save the variable and redeploy so the new value reaches the
+serverless functions. The spreadsheet must contain a tab named `Registrations`. Never commit or
+share the private key.
 
 ## Getting Started
 

@@ -25,13 +25,13 @@ const HEADERS = [
 function getSheetsClient() {
   const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
   const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-  const key = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+  const keyValue = process.env.GOOGLE_PRIVATE_KEY?.trim();
 
-  if (!spreadsheetId || !email || !key) {
+  if (!spreadsheetId || !email || !keyValue) {
     const missing = [
       ["GOOGLE_SHEETS_SPREADSHEET_ID", spreadsheetId],
       ["GOOGLE_SERVICE_ACCOUNT_EMAIL", email],
-      ["GOOGLE_PRIVATE_KEY", key],
+      ["GOOGLE_PRIVATE_KEY", keyValue],
     ]
       .filter(([, value]) => !value)
       .map(([name]) => name);
@@ -40,11 +40,31 @@ function getSheetsClient() {
     );
   }
 
+  let key = keyValue;
+  try {
+    if (key.startsWith("{")) {
+      const serviceAccount = JSON.parse(key) as { private_key?: unknown };
+      if (typeof serviceAccount.private_key === "string") {
+        key = serviceAccount.private_key;
+      }
+    } else if (key.startsWith('"') && key.endsWith('"')) {
+      key = JSON.parse(key) as string;
+    } else if (key.startsWith("'") && key.endsWith("'")) {
+      key = key.slice(1, -1);
+    }
+  } catch {
+    throw new Error(
+      "GOOGLE_PRIVATE_KEY is not valid PEM or service-account JSON. In Vercel, set it to the complete private_key value from the Google service-account JSON and redeploy.",
+    );
+  }
+
+  key = key.replace(/\\r\\n/g, "\n").replace(/\\n/g, "\n").replace(/\r\n/g, "\n").trim();
+
   try {
     createPrivateKey(key);
   } catch {
     throw new Error(
-      "GOOGLE_PRIVATE_KEY is invalid. Set it to the full private_key value from your downloaded Google service-account JSON, with PEM header/footer and line breaks encoded as \\n.",
+      "GOOGLE_PRIVATE_KEY is invalid. In Vercel, set it to the complete private_key value from the Google service-account JSON, including the PEM header and footer. Do not use placeholder text or truncate it, then save and redeploy.",
     );
   }
 
