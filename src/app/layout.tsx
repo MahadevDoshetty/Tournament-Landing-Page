@@ -15,9 +15,9 @@ const rajdhani = Rajdhani({
 });
 
 export const metadata: Metadata = {
-  title: "VykraX | Free Fire Tournament",
+  title: "VykraX | Free Fire Championship",
   description:
-    "Register for the VykraX Free Fire tournament. Solo, Duo, and Squad entries powered by Rank2Seat.",
+    "Register for the VykraX Free Fire championship. Solo, Duo, and Squad entries powered by Rank2Seat.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

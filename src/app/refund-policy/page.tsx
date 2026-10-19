@@ -16,16 +16,16 @@ export default function RefundPolicyPage() {
         <p className="mt-8 text-xs uppercase tracking-[0.28em] text-orange-300">Entry terms</p>
         <h1 className="mt-3 font-display text-3xl uppercase text-white md:text-4xl">Refund Policy</h1>
         <p className="mt-4 text-zinc-400">
-          This policy applies to tournament registrations collected by VykraX, powered by Rank2Seat.
+          This policy applies to championship registrations collected by VykraX, powered by Rank2Seat.
         </p>
 
         <div className="mt-8 space-y-7 leading-relaxed">
           <section>
             <h2 className="font-display text-lg uppercase text-white">All entry fees are non-refundable</h2>
             <p className="mt-2">
-              Once your payment has been successfully completed, the tournament entry fee is
+              Once your payment has been successfully completed, the championship entry fee is
               non-refundable. This applies if you withdraw, change your mind, do not attend or play,
-              or are disqualified for not following the tournament rules.
+              or are disqualified for not following the championship rules.
             </p>
           </section>
           <section>

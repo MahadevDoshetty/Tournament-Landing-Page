@@ -61,7 +61,7 @@ export async function sendConfirmationEmail(registration: RegistrationDocument):
         <p style="font-size:18px;background:#1a1408;border:1px solid #f59e0b;padding:12px 16px;">
           Your unique Team ID: <strong>${registration.teamId}</strong>
         </p>
-        <p>Keep this Team ID safe. You will need it for tournament communication.</p>
+        <p>Keep this Team ID safe. You will need it for championship communication.</p>
         <h2 style="font-size:16px;">Team details</h2>
         <ul>
           <li>Team name: ${escapeHtml(registration.teamName)}</li>

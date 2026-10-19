@@ -101,7 +101,7 @@ export function RegistrationForm() {
         amount: data.amount,
         currency: data.currency,
         name: "VykraX",
-        description: `${category.toUpperCase()} tournament entry — ₹${fee}`,
+        description: `${category.toUpperCase()} championship entry — ₹${fee}`,
         order_id: data.orderId,
         prefill: {
           name: captainName,
@@ -159,14 +159,14 @@ export function RegistrationForm() {
   const stageMessage: Partial<Record<SubmissionStage, string>> = {
     preparing: "Preparing your entry...",
     "awaiting-payment": "Complete your payment in the secure payment window.",
-    confirming: "Payment received. Confirming your tournament entry...",
-    redirecting: "Your entry is confirmed. Loading your Team ID...",
+    confirming: "Payment received. Confirming your championship entry...",
+    redirecting: "Championship confirmed. Loading your Team ID...",
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <fieldset disabled={isSubmitting} className="contents">
-        <legend className="sr-only">Tournament registration details</legend>
+        <legend className="sr-only">Championship registration details</legend>
       <div className="grid gap-3 sm:grid-cols-3">
         {(["solo", "duo", "squad"] as Category[]).map((option) => (
           <button

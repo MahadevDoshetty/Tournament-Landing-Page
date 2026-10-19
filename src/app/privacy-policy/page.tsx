@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
         <h1 className="mt-3 font-display text-3xl uppercase text-white md:text-4xl">Privacy Policy</h1>
         <p className="mt-4 text-zinc-400">
           This policy explains how VykraX, powered by Rank2Seat, handles information when you
-          register for a tournament.
+          register for a championship.
         </p>
 
         <div className="mt-8 space-y-7 leading-relaxed">
@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="font-display text-lg uppercase text-white">How we use it</h2>
             <p className="mt-2">
               Registration information is used to manage entries, verify payments, issue Team IDs,
-              communicate tournament information, administer the event and rewards, and respond to
+              communicate Championship information, administer the event and rewards, and respond to
               queries.
             </p>
           </section>
@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
             <p className="mt-2">
               Payments are processed by Razorpay. We do not ask you to enter or store full payment
               card, bank, or UPI credentials on this website. Information may be processed by
-              service providers supporting the tournament, including payment, hosting, database, and
+              service providers supporting the Championship, including payment, hosting, database, and
               email services, and may be disclosed where required by law.
             </p>
           </section>
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="font-display text-lg uppercase text-white">Storage and retention</h2>
             <p className="mt-2">
               We retain registration and transaction records for as long as reasonably necessary to
-              operate the tournament, handle support and payment queries, maintain required records,
+              operate the Championship, handle support and payment queries, maintain required records,
               and meet legal obligations. Access to those records is limited to people and
               providers who need them for these purposes.
             </p>
