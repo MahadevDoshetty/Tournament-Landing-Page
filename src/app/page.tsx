@@ -79,7 +79,7 @@ export default function Home() {
           <SectionHeading
             kicker="Format"
             title="Championship schedule & format"
-            note="The Championship runs through Battle Royale qualifiers, Clash Squad semi-finals, and final placement matches."
+            note="All three phases use Battle Royale on random maps. Teams advance according to their Rank Points (RP)."
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
@@ -107,35 +107,45 @@ export default function Home() {
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
               {
-                step: "01",
+                phase: "Phase I",
                 title: "Battle Royale qualifiers",
-                body: "All participating teams compete in a Battle Royale match. The top four teams advance to the semi-finals; all other teams are eliminated.",
+                field: "48 teams · 4 groups of 12",
+                body: "Teams are placed into Groups A, B, C, and D. The top six teams in each group by RP advance to Phase II, for 24 qualifiers total.",
+                matches: "Battle Royale · Random maps · 3 matches per group",
               },
               {
-                step: "02",
-                title: "Clash Squad semi-finals",
-                body: "The four qualified teams play Clash Squad matches. The two winning teams advance to the Grand Final; the two losing teams move to the third-place match.",
+                phase: "Phase II",
+                title: "Battle Royale qualifiers",
+                field: "Groups E & F · 12 teams each",
+                body: "The 24 qualifiers are split into Groups E and F, with 12 teams in each. The top six teams in each group by RP advance to Phase III, for 12 qualifiers total.",
+                matches: "Battle Royale · Random maps · 3 matches per group",
               },
               {
-                step: "03",
-                title: "Final & third-place match",
-                body: "The semi-final winners play for first and second place in the Grand Final. The semi-final losing teams play for third place; the winner claims third.",
+                phase: "Phase III",
+                title: "Championship standings",
+                field: "12 teams · 1 group",
+                body: "All 12 qualified teams compete together across two Battle Royale matches. Their combined RP across both matches determines the final standings: 1st, 2nd, and 3rd place.",
+                matches: "Battle Royale · Random maps · 2 matches",
               },
             ].map((item) => (
               <article
-                key={item.step}
+                key={item.phase}
                 className="rounded-2xl border border-white/10 bg-white/5 p-6"
               >
-                <p className="font-display text-orange-400">{item.step}</p>
+                <p className="font-display text-orange-400">{item.phase}</p>
                 <h3 className="mt-3 font-display text-xl uppercase text-white">{item.title}</h3>
+                <p className="mt-3 text-sm uppercase tracking-[0.12em] text-cyan-300">{item.field}</p>
                 <p className="mt-3 text-zinc-300">{item.body}</p>
+                <p className="mt-5 border-t border-white/10 pt-4 text-sm text-orange-200">
+                  {item.matches}
+                </p>
               </article>
             ))}
           </div>
           <p className="mt-5 rounded-xl border border-cyan-400/20 bg-cyan-400/5 px-5 py-4 text-zinc-200">
             <span className="font-display uppercase text-cyan-300">Championship objective: </span>
-            Battle Royale determines the top four teams, Clash Squad decides the finalists, and
-            the final matches determine the champion and final rankings.
+            Battle Royale qualifiers narrow 48 teams to 24, then 12. Phase III Rank Points across
+            two matches determine the Championship’s top three.
           </p>
         </section>
 
@@ -143,16 +153,21 @@ export default function Home() {
           <SectionHeading
             kicker="Fair play"
             title="Game rules"
-            note="Teams advance and place according to the Championship phases and match results described above. Additional gameplay rules will be announced by the organizer."
+            note="Qualifier rankings are determined by Rank Points (RP), with clear tie-break rules."
           />
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {[
               "Your place is confirmed once your entry is complete and you receive a Team ID. Please check your spam box for the mail. ",
               "Your entry fee depends on the category you choose and is shown before you confirm your entry.",
               "Players must use the Free Fire IDs submitted during registration. Contact the organizer if you need help with a registration detail.",
-              "The top four teams from the Battle Royale qualifier advance to the Clash Squad semi-finals; all other teams are eliminated.",
-              "The two semi-final winners compete for first and second place in the Grand Final. The two semi-final losing teams compete for third place.",
-              "Participants if found using any sort of hacking tools or AI tools will be banned from the Championship and strict action will be taken against them by the organizing committee."
+              "The top six teams by RP from each Phase I group advance to Phase II, for 24 teams total.",
+              "In Phase II, the 24 teams are split into two groups of 12. The top six by RP from each group advance to Phase III.",
+              "All 12 Phase III teams play two Battle Royale matches together. Final placements are based on combined RP across those two matches.",
+              "Rank Points (RP): each kill earns 1 RP.",
+              "Placement points: 1st place (Booyah) earns 10 RP, 2nd place earns 6 RP, and 3rd place earns 5 RP.",
+              "Teams are ranked by total RP. If teams are tied on RP, the team with more kills ranks higher.",
+              "If teams remain tied after comparing kills, a new match will be played to determine their ranking.",
+              "Participants found using hacking or AI tools will be disqualified from the Championship and may face further action from the organizing committee."
             ].map((rule) => (
               <p
                 key={rule}
