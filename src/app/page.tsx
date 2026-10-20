@@ -247,8 +247,8 @@ export default function Home() {
           </div>
           <div>
             <p className="mb-2 uppercase tracking-[0.16em] text-zinc-300">Questions?</p>
-            <a href="mailto:vykraxstudios@gmail.in" className="text-cyan-300 hover:text-cyan-200">
-              vykraxstudios@gmail.in
+            <a href="mailto:vykraxstudios@gmail.com" className="text-cyan-300 hover:text-cyan-200">
+              vykraxstudios@gmail.com
             </a>
             <div className="mt-2 flex flex-col gap-1">
               {["+91 8147503170", "+91 9071102249", "+91 9900341598"].map((phone) => (
