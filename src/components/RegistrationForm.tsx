@@ -100,7 +100,7 @@ export function RegistrationForm() {
         key: data.keyId,
         amount: data.amount,
         currency: data.currency,
-        name: "VykraX",
+        name: "VykraX Studios",
         description: `${category.toUpperCase()} championship entry — ₹${fee}`,
         order_id: data.orderId,
         prefill: {
@@ -262,7 +262,7 @@ export function RegistrationForm() {
       </label>
       </fieldset>
 
-      <div className="flex flex-col gap-3 rounded-xl border border-orange-400/30 bg-gradient-to-r from-orange-500/10 to-yellow-500/5 p-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 rounded-xl border border-orange-400/30 bg-linear-to-r from-orange-500/10 to-yellow-500/5 p-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-sm uppercase tracking-[0.18em] text-orange-300">Payable now</p>
           <p className="font-display text-3xl text-white">₹{fee}</p>
